@@ -2,22 +2,12 @@ import React from "react";
 
 
 const days = [
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri"
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
 ];
-
-
-const fullDays = {
-    Mon:"Monday",
-    Tue:"Tuesday",
-    Wed:"Wednesday",
-    Thu:"Thursday",
-    Fri:"Friday"
-};
-
 
 
 const colors = [
@@ -39,30 +29,23 @@ export const Timetable = ({
 
 return (
 
-
-<div className="w-full">
+<div>
 
 
 {/* Header */}
 
 <div className="
 flex
-flex-col
-sm:flex-row
 justify-between
-items-start
-sm:items-center
-mb-4
-gap-2
+items-center
+mb-5
 ">
 
 
 <div>
 
-
 <h2 className="
-text-xl
-sm:text-2xl
+text-2xl
 font-bold
 text-slate-800
 ">
@@ -73,11 +56,11 @@ text-slate-800
 
 
 <p className="
-text-xs
+text-sm
 text-slate-500
 ">
 
-Your weekly classes
+Manage your lectures
 
 </p>
 
@@ -85,13 +68,12 @@ Your weekly classes
 </div>
 
 
-
 <div className="
 bg-blue-100
 text-blue-700
-rounded-full
 px-3
 py-1
+rounded-full
 text-xs
 font-semibold
 ">
@@ -101,54 +83,57 @@ font-semibold
 </div>
 
 
-
 </div>
 
 
 
 
 
-{/* Timetable */}
+{/* Responsive timetable */}
 
 <div className="
 grid
-grid-cols-5
-gap-2
-w-full
+
+grid-cols-1
+
+sm:grid-cols-2
+
+lg:grid-cols-5
+
+gap-4
+
 ">
 
 
 
 {
 
-
-days.map(day => (
+days.map(day=>(
 
 
 <div
+
 key={day}
+
 className="
 bg-slate-50
-rounded-xl
-p-1
-sm:p-2
-min-h-[250px]
+rounded-2xl
+p-3
 "
+
 >
 
 
-
-{/* Day */}
+{/* Day title */}
 
 <div className="
 bg-slate-900
 text-white
-rounded-lg
-text-center
+rounded-xl
 py-2
-text-xs
-sm:text-sm
+text-center
 font-semibold
+text-sm
 ">
 
 {day}
@@ -159,12 +144,10 @@ font-semibold
 
 
 
-
 <div className="
-mt-2
-space-y-2
+mt-3
+space-y-3
 ">
-
 
 
 {
@@ -173,11 +156,11 @@ space-y-2
 lectures
 
 .filter(
-lecture =>
-lecture.day === fullDays[day]
+lecture=>lecture.day===day
 )
 
 .map((lecture,index)=>(
+
 
 
 <div
@@ -186,34 +169,26 @@ key={lecture.id}
 
 className={`
 bg-gradient-to-br
+
 ${colors[index % colors.length]}
 
-border-l-2
+border-l-4
 
-rounded-lg
+rounded-xl
 
-p-2
+p-3
 
 shadow-sm
-
-hover:shadow-md
-
-transition
-
-duration-200
 
 `}
 
 >
 
 
-
 <h3 className="
 font-bold
-text-[11px]
-sm:text-xs
+text-sm
 text-slate-800
-truncate
 ">
 
 {lecture.subject}
@@ -224,24 +199,20 @@ truncate
 
 
 <div className="
-text-[10px]
-sm:text-xs
+text-xs
 text-slate-600
-mt-1
+mt-2
+space-y-1
 ">
 
 
 <p>
-
-⏰ {lecture.start}
-
+⏰ {lecture.start} - {lecture.end}
 </p>
 
 
 <p>
-
 📍 {lecture.room}
-
 </p>
 
 
@@ -252,33 +223,32 @@ mt-1
 
 
 
-<div className="
-flex
-gap-1
-mt-2
-">
+{/* Buttons */}
 
+<div className="
+grid
+grid-cols-2
+gap-2
+mt-3
+">
 
 
 <button
 
-onClick={() =>
-editLecture(lecture)
-}
+onClick={()=>editLecture(lecture)}
 
 className="
-flex-1
 bg-blue-600
 text-white
-rounded-md
-py-1
-text-[9px]
+rounded-lg
+py-2
+text-xs
 hover:bg-blue-700
 "
 
 >
 
-Edit ✏️
+✏️ Edit
 
 </button>
 
@@ -287,29 +257,24 @@ Edit ✏️
 
 <button
 
-onClick={() =>
-deleteLecture(lecture.id)
-}
+onClick={()=>deleteLecture(lecture.id)}
 
 className="
-flex-1
 bg-red-100
 text-red-600
-rounded-md
-py-1
-text-[9px]
+rounded-lg
+py-2
+text-xs
 hover:bg-red-200
 "
 
 >
 
-Delete 🗑️
+🗑 Delete
 
 </button>
 
 
-
-
 </div>
 
 
@@ -317,53 +282,48 @@ Delete 🗑️
 
 
 </div>
-
 
 
 ))
 
 
-
-
-
 }
+
+
 
 
 
 
 {
 
-
 lectures.filter(
-l=>l.day===fullDays[day]
+l=>l.day===day
 ).length===0 &&
 
 
-<p className="
+<div className="
 text-center
-text-[10px]
+py-8
+text-xs
 text-gray-400
-mt-8
 ">
 
-Empty
+No classes
 
-</p>
+</div>
 
 
 }
 
 
 
-
-
 </div>
 
 
 
 
-
 </div>
+
 
 
 ))
@@ -373,16 +333,10 @@ Empty
 
 
 
-
-
 </div>
 
 
-
-
-
 </div>
-
 
 )
 
