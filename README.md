@@ -76,29 +76,7 @@ Live Demo: https://danu-codes.github.io/student-timetable-manager/
 
 ## 📂 Project Structure
 
-src/
-
-├── components/
-
-│ ├── Navbar.jsx
-
-│ ├── Stats.jsx
-
-│ ├── LectureForm.jsx
-
-│ ├── TodaySchedule.jsx
-
-│ ├── Timetable.jsx
-
-│ └── EditModal.jsx
-
-│
-
-├── App.jsx
-
-├── App.css
-
-└── main.jsx
+src │ ├── components │ │ │ ├── Navbar.jsx │ │ └── Responsive navigation bar with page switching │ │ │ ├── Stats.jsx │ │ └── Displays timetable statistics and overview cards │ │ │ ├── LectureForm.jsx │ │ └── Form for adding new lectures │ │ │ ├── TodaySchedule.jsx │ │ └── Shows lectures scheduled for the current day │ │ │ ├── Timetable.jsx │ │ └── Weekly timetable view with edit and delete actions │ │ │ └── EditModal.jsx │ └── Modal for updating lecture information │ ├── App.jsx │ └── Main application component and state management │ ├── main.jsx │ └── React application entry point │ ├── App.css │ └── Global application styles │ └── index.css └── Tailwind CSS configuration and utility imports
 
 ---
 
