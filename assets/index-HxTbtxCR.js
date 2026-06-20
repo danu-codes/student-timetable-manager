@@ -109,109 +109,99 @@ bg-blue-600\r
 text-white\r
 hover:bg-blue-700\r
 transition\r
-`,children:`Add Lecture`})]})]})},te=[`Mon`,`Tue`,`Wed`,`Thu`,`Fri`],ne={Mon:`Monday`,Tue:`Tuesday`,Wed:`Wednesday`,Thu:`Thursday`,Fri:`Friday`},re=[`from-blue-100 to-blue-50 border-blue-400`,`from-green-100 to-green-50 border-green-400`,`from-purple-100 to-purple-50 border-purple-400`,`from-yellow-100 to-yellow-50 border-yellow-400`,`from-pink-100 to-pink-50 border-pink-400`],w=({lectures:e,deleteLecture:t,editLecture:n})=>(0,b.jsxs)(`div`,{className:`w-full`,children:[(0,b.jsxs)(`div`,{className:`\r
+`,children:`Add Lecture`})]})]})},te=[`Monday`,`Tuesday`,`Wednesday`,`Thursday`,`Friday`],ne=[`from-blue-100 to-blue-50 border-blue-400`,`from-green-100 to-green-50 border-green-400`,`from-purple-100 to-purple-50 border-purple-400`,`from-yellow-100 to-yellow-50 border-yellow-400`,`from-pink-100 to-pink-50 border-pink-400`],re=({lectures:e,deleteLecture:t,editLecture:n})=>(0,b.jsxs)(`div`,{children:[(0,b.jsxs)(`div`,{className:`\r
 flex\r
-flex-col\r
-sm:flex-row\r
 justify-between\r
-items-start\r
-sm:items-center\r
-mb-4\r
-gap-2\r
+items-center\r
+mb-5\r
 `,children:[(0,b.jsxs)(`div`,{children:[(0,b.jsx)(`h2`,{className:`\r
-text-xl\r
-sm:text-2xl\r
+text-2xl\r
 font-bold\r
 text-slate-800\r
 `,children:`📅 Weekly Schedule`}),(0,b.jsx)(`p`,{className:`\r
-text-xs\r
+text-sm\r
 text-slate-500\r
-`,children:`Your weekly classes`})]}),(0,b.jsxs)(`div`,{className:`\r
+`,children:`Manage your lectures`})]}),(0,b.jsxs)(`div`,{className:`\r
 bg-blue-100\r
 text-blue-700\r
-rounded-full\r
 px-3\r
 py-1\r
+rounded-full\r
 text-xs\r
 font-semibold\r
 `,children:[e.length,` Classes`]})]}),(0,b.jsx)(`div`,{className:`\r
 grid\r
-grid-cols-5\r
-gap-2\r
-w-full\r
+\r
+grid-cols-1\r
+\r
+sm:grid-cols-2\r
+\r
+lg:grid-cols-5\r
+\r
+gap-4\r
+\r
 `,children:te.map(r=>(0,b.jsxs)(`div`,{className:`\r
 bg-slate-50\r
-rounded-xl\r
-p-1\r
-sm:p-2\r
-min-h-[250px]\r
+rounded-2xl\r
+p-3\r
 `,children:[(0,b.jsx)(`div`,{className:`\r
 bg-slate-900\r
 text-white\r
-rounded-lg\r
-text-center\r
+rounded-xl\r
 py-2\r
-text-xs\r
-sm:text-sm\r
+text-center\r
 font-semibold\r
+text-sm\r
 `,children:r}),(0,b.jsxs)(`div`,{className:`\r
-mt-2\r
-space-y-2\r
-`,children:[e.filter(e=>e.day===ne[r]).map((e,r)=>(0,b.jsxs)(`div`,{className:`
+mt-3\r
+space-y-3\r
+`,children:[e.filter(e=>e.day===r).map((e,r)=>(0,b.jsxs)(`div`,{className:`
 bg-gradient-to-br
-${re[r%re.length]}
 
-border-l-2
+${ne[r%ne.length]}
 
-rounded-lg
+border-l-4
 
-p-2
+rounded-xl
+
+p-3
 
 shadow-sm
 
-hover:shadow-md
-
-transition
-
-duration-200
-
 `,children:[(0,b.jsx)(`h3`,{className:`\r
 font-bold\r
-text-[11px]\r
-sm:text-xs\r
+text-sm\r
 text-slate-800\r
-truncate\r
 `,children:e.subject}),(0,b.jsxs)(`div`,{className:`\r
-text-[10px]\r
-sm:text-xs\r
+text-xs\r
 text-slate-600\r
-mt-1\r
-`,children:[(0,b.jsxs)(`p`,{children:[`⏰ `,e.start]}),(0,b.jsxs)(`p`,{children:[`📍 `,e.room]})]}),(0,b.jsxs)(`div`,{className:`\r
-flex\r
-gap-1\r
 mt-2\r
+space-y-1\r
+`,children:[(0,b.jsxs)(`p`,{children:[`⏰ `,e.start,` - `,e.end]}),(0,b.jsxs)(`p`,{children:[`📍 `,e.room]})]}),(0,b.jsxs)(`div`,{className:`\r
+grid\r
+grid-cols-2\r
+gap-2\r
+mt-3\r
 `,children:[(0,b.jsx)(`button`,{onClick:()=>n(e),className:`\r
-flex-1\r
 bg-blue-600\r
 text-white\r
-rounded-md\r
-py-1\r
-text-[9px]\r
+rounded-lg\r
+py-2\r
+text-xs\r
 hover:bg-blue-700\r
-`,children:`Edit ✏️`}),(0,b.jsx)(`button`,{onClick:()=>t(e.id),className:`\r
-flex-1\r
+`,children:`✏️ Edit`}),(0,b.jsx)(`button`,{onClick:()=>t(e.id),className:`\r
 bg-red-100\r
 text-red-600\r
-rounded-md\r
-py-1\r
-text-[9px]\r
+rounded-lg\r
+py-2\r
+text-xs\r
 hover:bg-red-200\r
-`,children:`Delete 🗑️`})]})]},e.id)),e.filter(e=>e.day===ne[r]).length===0&&(0,b.jsx)(`p`,{className:`\r
+`,children:`🗑 Delete`})]})]},e.id)),e.filter(e=>e.day===r).length===0&&(0,b.jsx)(`div`,{className:`\r
 text-center\r
-text-[10px]\r
+py-8\r
+text-xs\r
 text-gray-400\r
-mt-8\r
-`,children:`Empty`})]})]},r))})]}),ie=({lectures:e})=>{let t=new Date().toLocaleDateString(`en-US`,{weekday:`long`}),n=new Date().toLocaleDateString(`en-US`,{day:`numeric`,month:`short`,year:`numeric`}),r=e.filter(e=>e.day===t);return(0,b.jsxs)(`div`,{className:`\r
+`,children:`No classes`})]})]},r))})]}),w=({lectures:e})=>{let t=new Date().toLocaleDateString(`en-US`,{weekday:`long`}),n=new Date().toLocaleDateString(`en-US`,{day:`numeric`,month:`short`,year:`numeric`}),r=e.filter(e=>e.day===t);return(0,b.jsxs)(`div`,{className:`\r
 bg-white\r
 rounded-2xl\r
 shadow-md\r
@@ -304,7 +294,7 @@ ml-2\r
 `,children:[e.start,` - `,e.end]})]}),(0,b.jsxs)(`p`,{children:[`📍`,(0,b.jsx)(`span`,{className:`\r
 font-medium\r
 ml-2\r
-`,children:e.room})]})]})]},e.id))})]})},ae=({lecture:e,closeModal:t,updateLecture:n})=>{let[r,i]=(0,_.useState)(e);(0,_.useEffect)(()=>{i(e)},[e]);function a(e){i({...r,[e.target.name]:e.target.value})}function o(e){e.preventDefault(),n(r),t()}return(0,b.jsx)(`div`,{className:`\r
+`,children:e.room})]})]})]},e.id))})]})},ie=({lecture:e,closeModal:t,updateLecture:n})=>{let[r,i]=(0,_.useState)(e);(0,_.useEffect)(()=>{i(e)},[e]);function a(e){i({...r,[e.target.name]:e.target.value})}function o(e){e.preventDefault(),n(r),t()}return(0,b.jsx)(`div`,{className:`\r
 fixed\r
 inset-0\r
 bg-black/40\r
@@ -340,7 +330,7 @@ flex-1\r
 bg-gray-200\r
 p-2\r
 rounded-lg\r
-`,children:`Cancel`})]})]})]})})};function oe(){let[e,t]=(0,_.useState)(()=>JSON.parse(localStorage.getItem(`lectures`))||[]),[n,r]=(0,_.useState)(``),[i,a]=(0,_.useState)(null),[o,s]=(0,_.useState)(!1),[c,l]=(0,_.useState)(`Home`);(0,_.useEffect)(()=>{localStorage.setItem(`lectures`,JSON.stringify(e))},[e]);function u(e){t(t=>[...t,{...e,id:Date.now()}])}function d(e){t(t=>t.filter(t=>t.id!==e))}function f(e){t(t=>t.map(t=>t.id===e.id?e:t))}let p=e.filter(e=>e.subject.toLowerCase().includes(n.toLowerCase()));return(0,b.jsxs)(`div`,{className:`
+`,children:`Cancel`})]})]})]})})};function ae(){let[e,t]=(0,_.useState)(()=>JSON.parse(localStorage.getItem(`lectures`))||[]),[n,r]=(0,_.useState)(``),[i,a]=(0,_.useState)(null),[o,s]=(0,_.useState)(!1),[c,l]=(0,_.useState)(`Home`);(0,_.useEffect)(()=>{localStorage.setItem(`lectures`,JSON.stringify(e))},[e]);function u(e){t(t=>[...t,{...e,id:Date.now()}])}function d(e){t(t=>t.filter(t=>t.id!==e))}function f(e){t(t=>t.map(t=>t.id===e.id?e:t))}let p=e.filter(e=>e.subject.toLowerCase().includes(n.toLowerCase()));return(0,b.jsxs)(`div`,{className:`
       min-h-screen
       bg-slate-100
       p-3
@@ -364,7 +354,7 @@ rounded-lg\r
         outline-none
         focus:ring-2
         focus:ring-blue-400
-      `,placeholder:`🔍 Search lectures...`,value:n,onChange:e=>r(e.target.value)})}),(0,b.jsx)(ie,{lectures:e}),(0,b.jsxs)(`div`,{className:`
+      `,placeholder:`🔍 Search lectures...`,value:n,onChange:e=>r(e.target.value)})}),(0,b.jsx)(w,{lectures:e}),(0,b.jsxs)(`div`,{className:`
       grid
       grid-cols-1
       lg:grid-cols-12
@@ -382,12 +372,12 @@ rounded-lg\r
           shadow-md
           p-4
           sm:p-6
-        `,children:(0,b.jsx)(w,{lectures:p,deleteLecture:d,editLecture:e=>{a(e),s(!0)}})})})]})]}),c===`Stats`&&(0,b.jsx)(`div`,{className:`
+        `,children:(0,b.jsx)(re,{lectures:p,deleteLecture:d,editLecture:e=>{a(e),s(!0)}})})})]})]}),c===`Stats`&&(0,b.jsx)(`div`,{className:`
     bg-white
     rounded-2xl
     shadow-md
     p-6
-    `,children:(0,b.jsx)(ee,{lectures:e})}),c===`Today`&&(0,b.jsx)(ie,{lectures:e}),c===`Weekly`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(`div`,{className:`
+    `,children:(0,b.jsx)(ee,{lectures:e})}),c===`Today`&&(0,b.jsx)(w,{lectures:e}),c===`Weekly`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(`div`,{className:`
       bg-white
       rounded-2xl
       shadow-sm
@@ -408,4 +398,4 @@ rounded-lg\r
       shadow-md
       p-4
       sm:p-6
-      `,children:(0,b.jsx)(w,{lectures:p,deleteLecture:d,editLecture:e=>{a(e),s(!0)}})})]})]}),o&&(0,b.jsx)(ae,{lecture:i,updateLecture:f,closeModal:()=>s(!1)})]})}(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(oe,{})}));
+      `,children:(0,b.jsx)(re,{lectures:p,deleteLecture:d,editLecture:e=>{a(e),s(!0)}})})]})]}),o&&(0,b.jsx)(ie,{lecture:i,updateLecture:f,closeModal:()=>s(!1)})]})}(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(ae,{})}));
