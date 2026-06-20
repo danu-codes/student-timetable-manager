@@ -79,25 +79,25 @@ Live Demo: https://danu-codes.github.io/student-timetable-manager/
 src/
 
 ├── components/
-| |
+
 │ ├── Navbar.jsx
-| |
+
 │ ├── Stats.jsx
-| |
+
 │ ├── LectureForm.jsx
-| |
+
 │ ├── TodaySchedule.jsx
-| |
+
 │ ├── Timetable.jsx
-| |
+
 │ └── EditModal.jsx
-|
+
 │
-|
+
 ├── App.jsx
-|
+
 ├── App.css
-|
+
 └── main.jsx
 
 ---
